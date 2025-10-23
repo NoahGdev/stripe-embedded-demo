@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "Stripe Embedded Demo",
+    "slug": "stripe-embedded-demo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "scheme": "stripe-demo",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#635bff"
+    },
+    "ios": {
+      "bundleIdentifier": "com.stripe.embedded.demo",
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#635bff"
+      },
+      "package": "com.stripe.embedded.demo"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.stripe.embedded.demo",
+          "enableGooglePay": true
+        }
+      ]
+    ]
+  }
+}
