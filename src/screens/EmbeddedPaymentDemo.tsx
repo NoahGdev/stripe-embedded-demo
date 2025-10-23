@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Pressable, Alert, ScrollView } from "react-native";
+import { View, Text, Pressable, Alert, ScrollView, StyleSheet } from "react-native";
 import { useEmbeddedPayment } from "../hooks/useEmbeddedPayment";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -23,25 +23,16 @@ export default function EmbeddedPaymentDemo() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50 relative">
-      <View className="p-6" style={{ paddingBottom: 300 }}>
-
-        {embeddedPaymentElementView}
-
-        <Pressable
-          onPress={handleSavePaymentMethod}
-          disabled={isProcessing || !isLoaded || !paymentOption}
-          className={`rounded-lg p-4 ${
-            isProcessing || !isLoaded || !paymentOption
-              ? "bg-gray-300"
-              : "bg-blue-500"
-          }`}
-        >
-          <Text className="text-white font-semibold text-center text-lg">
-            {isProcessing ? "Saving..." : "Save Payment Method"}
-          </Text>
-        </Pressable>
-      </View>
+    <SafeAreaView style={styles.container}>
+      {embeddedPaymentElementView}
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f9fafb',
+    position: 'relative',
+  },
+});
